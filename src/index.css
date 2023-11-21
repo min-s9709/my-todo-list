@@ -1,6 +1,28 @@
+/*
+[class] -> <div className="app" />
+.cc {
+}
+
+[id] -> <div id="app" />
+.app {
+}
+
+[:root] -> 최상위 element. html
+:root {
+
+}
+*/
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /*브라우저가 처음에 있는 폰트부터 하나씩 시도 -> 사용 가능한 첫번째 폰트 사용.*/
+
   line-height: 1.5;
+  /*
+  line-height는 텍스트의 줄 간격을 조정하는 역할
+  보통은 절대적인 값인 px를 나타내지만, 상대적인 값으로 사용가능.
+  이 속성이 적용된 element의 font-size에 대한 배수를 곱한것
+  ex) font-size: 16px; -> line-height의 절대값 : 16 * 1.5 px;
+  */
   font-weight: 400;
 
   color-scheme: dark;
@@ -26,6 +48,12 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  /* 
+  flex와 grid 둘 다 사용 가능함 
+  flex에서 아래를 대체해서 place-items: center를 사용할 수 있다.
+  justify-content: center;
+  align-items: center;
+  */
   min-width: 320px;
   min-height: 100vh;
 }
@@ -45,6 +73,19 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  /* 
+  transition은 요소의 스타일 변화가 부드럽게 일어나도록 하는 속성 
+  [사용법]
+  transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
+  사용 가능한 transition-timing-function 값
+    
+linear: 일정한 속도로 변화합니다.
+ease: 천천히 시작하여 빨라졌다가 다시 천천히 끝납니다.
+ease-in: 천천히 시작하여 점점 빨라집니다.
+ease-out: 빠르게 시작하여 점점 느려집니다.
+ease-in-out: 천천히 시작하여 중간에 빨라졌다가 다시 천천히 끝납니다.
+cubic-bezier(n,n,n,n): 사용자가 정의한 속도 곡선을 생성합니다.
+*/
 }
 button:hover {
   border-color: #646cff;
